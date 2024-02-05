@@ -1,4 +1,4 @@
-# Learn yourself some Elixir
+# 01_Introduction
 
 ```elixir
 Mix.install([
