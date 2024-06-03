@@ -70,7 +70,7 @@ Not a video learner? Looking for a specific learning? https://elixirschool.com/ 
 
 Right now you're inside a livebook. Most likely you're running a pre-build version where Elixir is bundled and shared with the livebook application build.
 
-If you'd want to use Elixir in your terminal independently from livebook, you should install it locally.
+If you'd want to use Elixir in your terminal independently of livebook, you should install it locally.
 
 To do so you can go to
 http://elixir-lang.org/install.html or follow our guide here:
@@ -360,7 +360,7 @@ You have **string interpolation** with `#{variable}`.
 
 ```elixir
 a = "ok"
-IO.inspect(a, label: "the value is: ")
+IO.inspect(a, label: "the value is")
 IO.puts("the value is still: #{a}")
 ```
 
@@ -412,7 +412,7 @@ list = [2, 3]
 
 ### Tuples
 
-Elixir uses curly brackets to make a tuple. Tuples are [**not** enumerable](https://github.com/dwyl/learn-elixir/issues/39) and there are far fewer functions available in the [Tuple](http://elixir-lang.org/docs/v1.0/elixir/Tuple.html) module. You can reference tuple values by index but [you cannot iterate over them](https://github.com/dwyl/learn-elixir/issues/39).
+Elixir uses curly brackets to make a tuple. Tuples are [**not** enumerable](https://github.com/dwyl/learn-elixir/issues/39) and there are far fewer functions available in the [Tuple](http://elixir-lang.org/docs/v1.0/elixir/Tuple.html) module. You can reference tuple values by index, but [you cannot iterate over them](https://github.com/dwyl/learn-elixir/issues/39).
 If you must treat your tuple as a list, then convert it using `Tuple.to_list(your_tuple)`
 
 Tuples are similar to lists but are
@@ -462,7 +462,7 @@ When dealing with **large** lists or tuples:
 
 ### [Pattern matching](https://en.wikipedia.org/wiki/Pattern_matching)
 
-[Pattern matching](https://hexdocs.pm/elixir/main/patterns-and-guards.html) is heavily used in `Elixir`. This is like destructuring in Javascript. The examples below are self explanatory
+[Pattern matching](https://hexdocs.pm/elixir/main/patterns-and-guards.html) is heavily used in `Elixir`. This is like destructuring in Javascript. The examples below are self-explanatory.
 
 ```elixir
 {first, second, third} = {1, :ok, "fine"}
@@ -471,8 +471,8 @@ IO.inspect(second)
 IO.inspect(third)
 
 [head | tail] = [1, 2, 3, "four"]
-IO.inspect(head, label: "head: ")
-IO.inspect(tail, label: "tail: ")
+IO.inspect(head, label: "head")
+IO.inspect(tail, label: "tail")
 
 # when we don't need a variable, use the underscore "_" and it becomes gray.
 [_h | [_h1 | t]] = [1, :two, 3, "four"]
@@ -594,11 +594,11 @@ end
 ExMod2.print_b()
 ```
 
-Note that this turns the function to be impure; if `b` changes, the n the result of `ExMod2.print_b` changes. You can consider them as environmental variables: you may need to use them in a controlled way.
+Note that this turns the function to be impure; if `b` changes, the n the result of `ExMod2.print_b` changes. You can consider them as environment variables: you may need to use them in a controlled way.
 
 <!-- livebook:{"break_markdown":true} -->
 
-#### Example in a controle flow: `if`
+#### Example in a control flow: `if`
 
 The control flow `if` below uses the variable `n`. It is in the scope, accessible. The macro `if` is itself a function that returns something.
 
@@ -631,7 +631,7 @@ IO.inspect(n, label: "the value of 'n' is now: ")
 
 ### Function guards
 
-Imagine you have a function that behaves differently depending on a variable. For example, the function adds $1$ to every even number, and adds $2$ to every odd number. You would traditionnally invoque an [`if`](https://elixir-lang.org/getting-started/case-cond-and-if.html#if-and-unless) statement like this:
+Imagine you have a function that behaves differently depending on a variable. For example, the function adds $1$ to every even number, and adds $2$ to every odd number. You would traditionally invoke an [`if`](https://elixir-lang.org/getting-started/case-cond-and-if.html#if-and-unless) statement like this:
 
 ```elixir
 defmodule Ex1 do
@@ -651,9 +651,8 @@ We can instead use a [guard clause](https://hexdocs.pm/elixir/1.14.3/Kernel.html
 
 ```elixir
 defmodule Ex2 do
-  def add(x) when rem(x, 2) == 0, do: x + 1
-
   def add(x), do: x + 2
+  def add(x) when rem(x, 2) == 0, do: x + 1
 end
 
 Ex2.add(3)
@@ -661,7 +660,7 @@ Ex2.add(3)
 
 This works again by **pattern matching**. This means the **order** in which you defined the headers is extremely **important**. If you reverse the order, the second clause will never match since the first will match all cases.
 
-A use case is recursion, which is heavily used in functional code. Guards allows you yo write recursive functions very easily like this:
+A use case is recursion, which is heavily used in functional code. Guards allows you to write recursive functions very easily like this:
 
 ```elixir
 defmodule Ex3 do
@@ -685,7 +684,7 @@ What if we wanted to chain our functions? We can do this with the pipe `|>` oper
 
 An example. Consider the two functions below. Suppose that `times` receives as first argument the output of `double`, then we can pipe them: `double.(2) |> times.(3)`.
 
-> **Note** we write only the second argument of `times` because his first argument is implicit. If we write it, you get an error because the compiler will consider that `times` has 3 arguments whereas we only defined `times` with 2 arguments. The number of arguments is called the "[arity](https://en.wikipedia.org/wiki/Arity)".
+> **Note** we write only the second argument of `times` because its first argument is implicit. If we write it, you get an error because the compiler will consider that `times` has 3 arguments whereas we only defined `times` with 2 arguments. The number of arguments is called the "[arity](https://en.wikipedia.org/wiki/Arity)".
 
 We can even pipe `inspect` in the middle of the piping sequence to check what `double` is sending to `times`. This can be very usefull.
 
@@ -694,7 +693,7 @@ double = fn x -> x * 2 end
 times = fn x, y -> x * y end
 
 double.(2)
-|> IO.inspect(label: "'add' sends")
+|> IO.inspect(label: "'double' sends")
 |> times.(3)
 ```
 
@@ -858,7 +857,9 @@ Let's add some functionalities in it:
 
 ```elixir
 defmodule Animals do
-  @moduledoc false
+  @moduledoc """
+  Documentation for `Animals`.
+  """
 
   @doc """
   Hello world.
@@ -1362,7 +1363,7 @@ see:
 
 ### Maps
 
-Maps are very similar to `Object` literals in `JavaScript`. They have almost the samesyntax except for a `%` symbol. They look like this:
+Maps are very similar to `Object` literals in `JavaScript`. They have almost the same syntax except for a `%` symbol. They look like this:
 
 ```elixir
 animal = %{
@@ -1395,7 +1396,7 @@ Let's say we wanted to assign values to the variables for each of the key-value 
 } = animal
 ```
 
-You can pattern match on a part of the map. Note that you don't have the Javascript short cut of not writting the value explicitely; you need to write `key: value`.
+You can pattern match on a part of the map. Note that you don't have the Javascript shortcut of not writting the value explicitely; you need to write `key: value`.
 
 ```elixir
 %{name: name} = animal
@@ -1463,7 +1464,7 @@ animal = %{animal | name: "Max"}
 
 When looking into **`Elixir`** you may have heard about its
 [processes](https://elixir-lang.org/getting-started/processes.html) and its support for concurrency. 
-In fact we even mention processes as one of the key advantages. If you're anything like us,you're probably wondering what this actually means for you and your code. 
+In fact we even mention processes as one of the key advantages. If you're anything like us, you're probably wondering what this actually means for you and your code. 
 This section aims to help you understand what they are and how they can help improve
 your **`Elixir`** projects.
 
@@ -1639,7 +1640,7 @@ Now that we can create processes that can send messages to each other, let's see
 
 #### Concurrency, parallel ?
 
-Parallelism is about using multiple cores, whilst concurrency is about starting multiple tasks at the same time, independantly of the number of cores.
+Parallelism is about using multiple cores, whilst concurrency is about starting multiple tasks at the same time, independently of the number of cores.
 
 <details>
 Firstly a quote: [source](https://exercism.org/blog/concurrency-parallelism-in-elixir)
@@ -1647,7 +1648,7 @@ Firstly a quote: [source](https://exercism.org/blog/concurrency-parallelism-in-e
 "Concurrency and parallelism are related terms but don't mean precisely the same thing. A concurrent program is one where multiple tasks can be "in progress," but at any single point in time, only one task is executing on the CPU (e.g., executing one task while another is waiting for IO such as reading or writing to the disk or a network). On the other hand, a parallel program is capable of executing multiple tasks at the same time on multiple CPU cores."
 </details>
 
-In Elixir, processes are **not OS processes**, and have separate contexts, independant execution contexts (isolation). You can have hundreds of thousands of processes on a single CPU. If your computer has **multiple cores**, the BEAM - the VM that runs the `Elixir` code - will automaticaly run processes on each of them in parallel.
+In Elixir, processes are **not OS processes**, and have separate contexts, independent execution contexts (isolation). You can have hundreds of thousands of processes on a single CPU. If your computer has **multiple cores**, the BEAM - the VM that runs the `Elixir` code - will automaticaly run processes on each of them in parallel.
 
 Something can run concurrently, but that doesn't mean it will be parallel. If you run 2 CPU-bound concurrent tasks with one CPU core, they won't run in parallel. Concurrency doesn't always mean that it will be faster.  However, if something is running in parallel, that means that it is running concurrently."
 
@@ -1684,7 +1685,7 @@ multiple processes.
 > Recall that the factorial of a number $n$ is the product of all the integers below it:
 > e.g $\rm{factorial}(4) = 1*2*3*4=24$
 
-It is also note $4!$ in mathematics.
+It is also noted as $4!$ in mathematics.
 
 > Note: this livebook is running on fly.io, thus limited in terms of CPU and cores. You are limited to small values, not more than 10_000. You might not fully appreciate this unless you fork this repo and run it on your computer.
 
@@ -1711,7 +1712,7 @@ Now, consider the following module that computes the factorial of a given number
 
 We added a helper function at the end for the rendering.
 
-* the recursion works simply by using the formula $n! = n\times (n-1)!$. In other words, a function that calls himself:
+* the recursion works simply by using the formula $n! = n\times (n-1)!$. In other words, a function that calls itself:
   $$
   \rm{factorial}(n) = n \cdot \rm{factorial}(n-1)
   $$
