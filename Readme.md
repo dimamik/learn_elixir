@@ -11,7 +11,7 @@ First of all we'll walk together through the Elixir basics, and then, to solidif
 - This livebook should help you get an overview of Elixir:
 
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https://github.com/dimamik/learn_elixir_livebook/blob/main/01_Introduction.livemd)
-
+- More detailed explanation regarding moving pieces in Elixir can be found in [Elixir Docs](https://hexdocs.pm/elixir/introduction.html)
 ### Phoenix
 
 https://hexdocs.pm/phoenix/overview.html
