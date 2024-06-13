@@ -35,3 +35,9 @@ Those videos should be playable as soon as the transcoding process finishes. (It
 1. Add different types of notifications to the client. Say when the video is started to be transcoded, the client sees a banner saying your video is picked by our “transcoder”, when it is processed the client receives an update and sees the newly processed video.
 
 Depending on the time you have, you can do only the first few steps, ignoring 3 and 4.
+
+## Suggested way of collaborating
+
+- You can create a repo with a project (public or private, whichever works best for you) and request my (@dimamik) reviews of the Pull Requests which should be atomic sensible parts your project is split into.
+
+- Please, commit the initial `mix new ...` run separately so we know which changes are generated, and which are yours.
