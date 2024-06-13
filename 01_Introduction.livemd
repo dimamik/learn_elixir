@@ -11,9 +11,9 @@ Mix.install([
 
 ## Introduction
 
-Please be aware that this livebook is almost full 1-1 copy of [this](https://github.com/dwyl/learn-elixir-with-livebook#elixir-initiation-livebook) amazing work done by `dwyl`.
+Please be aware that this livebook is almost a full 1-1 copy of [this](https://github.com/dwyl/learn-elixir-with-livebook#elixir-initiation-livebook) amazing work done by [`@dwyl`](https://github.com/dwyl).
 
-Only parts that are outdated or need some tweaks in our internal cominuty are adjusted, so big thanks to `dwyl` for its amazing work.
+Only parts that are outdated or need some tweaks in our internal cominuty are adjusted, so big thanks to [`@dwyl`](https://github.com/dwyl) for its amazing work.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -27,7 +27,7 @@ Only parts that are outdated or need some tweaks in our internal cominuty are ad
 
 * **Compiled** and run on the **Erlang VM** ("BEAM"). [(Renowned for efficiency)](http://stackoverflow.com/questions/16779162/what-kind-of-virtual-machine-is-beam-the-erlang-vm)
 
-* Much better ["garbage collection"](http://searchstorage.techtarget.com/definition/garbage-collection) than virtually any other VM
+* Much better ["garbage collection"](http://searchstorage.techtarget.com/definition/garbage-collection) than virtually any other VM -> [Source](https://www.erlang.org/doc/apps/erts/garbagecollection.html)
 
 * Many tiny processes (as opposed to "threads"
   which are more difficult to manage)
@@ -60,6 +60,7 @@ If you have the time, these videos give a nice contextual introduction into what
 made our *own* intro to **`Elixir`** vid! 
 -->
 
+* [The soul of Erlang and Elixir](https://www.youtube.com/watch?v=JvBT4XBdoUE)
 * Code School's [Try Elixir](https://www.codeschool.com/courses/try-elixir), 3 videos (25mins :movie_camera: plus exercises, totalling 90mins). The 'Try' course is free (there is an extended paid for course).
 * Pete Broderick's [Intro to Elixir](https://youtu.be/lly-1UYmnFI) (41 mins :movie_camera:)
 * Jessica Kerr's [Elixir Should Take Over the World](https://youtu.be/X25xOhntr6s) (58 mins :movie_camera:)
@@ -2380,6 +2381,10 @@ VegaLite.new(
 > http://stackoverflow.com/questions/18011784/why-are-there-two-kinds-of-functions-in-elixir
 
 ## Further readings
+
+**The best and the most accuracte source to read about elixir is the [Elixir Docs](https://hexdocs.pm/elixir/introduction.html)**
+
+The rest is subjective, but still worth a try:
 
 * [Crash Course in Elixir](http://elixir-lang.org/crash-course.html)
 * [Elixir School](https://elixirschool.com/), 
