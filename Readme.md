@@ -47,3 +47,21 @@ Depending on the time you have, you can do only the first few steps, ignoring 3 
 - You can create a repo with a project (public or private, whichever works best for you) and request my (@dimamik) reviews of the Pull Requests which should be atomic sensible parts your project is split into.
 
 - Please, commit the initial `mix new ...` run separately so we know which changes are generated, and which are yours.
+
+## Adanced version of the project - YouTube in LiveView -> LiveTube
+
+In more advanced version of the project we will be building a YouTube alternative, which primary functionalities will include:
+
+- User auth flow
+- User private video library. Some of the videos can be marked as public, then they can be watched by others.
+- The ability to watch your own videos in different qualities (it's okay to pre-generate and save 3 of the main ones).
+- The ability to subscribe to other folks and watch their public videos.
+- Subscribed feed, where the videos from folks you subscibe is presented.
+- General feed, where both videos from floks you subscibe are mixed with videos from the folks you don't (no recommendation algorithm for now, just )
+- Real-time watch count (watch counts as soon as somebody loaded the video, only one per registered user). Unregistered users can't watch videos.
+- Video Comments & likes
+
+And if you're still not busy enough, then:
+
+1. Instead of streaming from the file, use HLS to deliver videos.
+1. Instead of randomly selecting the content to the feed, use recommendation algorithm of a choice to create magnificent YouTube-like (or even better) feed. Consider using [NX](https://github.com/elixir-nx/nx) and [Axon](https://hexdocs.pm/axon/Axon.html) to adapt some recommendation model to [Bumblebee](https://github.com/elixir-nx/bumblebee).
