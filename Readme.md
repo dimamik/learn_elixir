@@ -11,7 +11,9 @@ First of all we'll walk together through the Elixir basics, and then, to solidif
 - This livebook should help you get an overview of Elixir:
 
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https://github.com/dimamik/learn_elixir_livebook/blob/main/01_Introduction.livemd)
+
 - More detailed explanation regarding moving pieces in Elixir can be found in [Elixir Docs](https://hexdocs.pm/elixir/introduction.html)
+
 ### Phoenix
 
 https://hexdocs.pm/phoenix/overview.html
@@ -35,6 +37,10 @@ Those videos should be playable as soon as the transcoding process finishes. (It
 1. Add different types of notifications to the client. Say when the video is started to be transcoded, the client sees a banner saying your video is picked by our “transcoder”, when it is processed the client receives an update and sees the newly processed video.
 
 Depending on the time you have, you can do only the first few steps, ignoring 3 and 4.
+
+### Flow diagram
+
+<img src="img/project_diagram.png">
 
 ## Suggested way of collaborating
 
