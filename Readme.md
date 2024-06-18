@@ -40,7 +40,42 @@ Depending on the time you have, you can do only the first few steps, ignoring 3 
 
 ### Flow diagram
 
-<img src="img/project_diagram.png">
+```mermaid
+%% sequenceDiagram
+%%     Client ->> GenServer queue: Transcode video "path" in quality X
+%%     Client ->> GenServer queue: Transcode video "path" in quality Y
+%%     Client ->> GenServer queue: Transcode video "path" in quality Z
+
+
+sequenceDiagram
+    participant client as Web Client
+    participant server as Web Server
+    participant gen_mailbox as Gen Server MailBox
+    participant gen as GenServer a.k.a Transcoder
+
+
+    client ->>+server: Upload video under $path
+
+    server ->>gen_mailbox: Transcode $path into X
+    server ->>gen_mailbox: Transcode $path into Y
+    server ->>gen_mailbox: Transcode $path into Z
+
+    server ->>-client: Transcoding is scheduled
+
+    gen_mailbox ->>+gen: Transcode $path into X 
+    gen ->>-client: Transcoding of X finished under $path_X (via clients websocket)
+
+    gen_mailbox ->>+gen: Transcode $path into Y 
+    gen ->>-client: Transcoding of Y finished under $path_Y (via clients websocket)
+
+    gen_mailbox ->>+gen: Transcode $path into Z 
+    gen ->>-client: Transcoding of Z finished under $path_Z (via clients websocket)
+
+    %% Note over web,db: The user must be logged in to submit blog posts
+    %% web->>+account: Logs in using credentials
+    %% account->>db: Query stored accounts
+    %% db->>account: Respond with query result
+```
 
 ## Suggested way of collaborating
 
