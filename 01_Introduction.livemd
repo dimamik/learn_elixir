@@ -183,20 +183,20 @@ Lets look at two basic numerical operators: `+` and `/`.
 When using the [`/`](https://hexdocs.pm/elixir/1.14.2/Kernel.html#//2) with two integers this gives a `float` (5.0).
 
 ```elixir
-10 / 3
+10 / 2
 ```
 
 This operator can be invoked by the `Kernel./` routine:
 
 ```elixir
-Kernel./(10, 3)
+Kernel./(10, 2)
 ```
 
 If you want to do integer division or get the euclidean division remainder you can use the `div` or `rem` functions
 
 ```elixir
 a = 10
-b = 3
+b = 2
 div(a, b)
 ```
 
@@ -652,8 +652,8 @@ We can instead use a [guard clause](https://hexdocs.pm/elixir/1.14.3/Kernel.html
 
 ```elixir
 defmodule Ex2 do
-  def add(x), do: x + 2
   def add(x) when rem(x, 2) == 0, do: x + 1
+  def add(x), do: x + 2
 end
 
 Ex2.add(3)
@@ -1132,7 +1132,7 @@ use: "mix local.hex --force") [Yn]
 
 If you do then just enter `y` and then press enter. This will install the dependencies that you need.
 
-Once `ex_docs` has been installed, run run the following command to generate documentation (*make sure you're not in `iex`*):
+Once `ex_docs` has been installed, run the following command to generate documentation (*make sure you're not in `iex`*):
 
 ```sh
 > mix docs

@@ -33,7 +33,7 @@ Those videos should be playable as soon as the transcoding process finishes. (It
 
 1. Project setup. (We suggest using Phoenix and LiveView, but you can use whichever elixir tool you find useful). See [`mix phx.new command`](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html), and useful `--no-ecto` option, as we don’t need to persist the videos.
 1. Create uploading form (see https://hexdocs.pm/phoenix_live_view/uploads.html)
-1. Transcode the uploaded video ([GenServer](https://hexdocs.pm/elixir/1.12/GenServer.html) will be helpful here) and send back the video to the client (ffmpeg runned using System.cmd/3 could be helpful, [ffmpeg installation](https://phoenixnap.com/kb/ffmpeg-mac))
+1. Transcode the uploaded video ([GenServer](https://hexdocs.pm/elixir/1.17.1/GenServer.html) will be helpful here) and send back the video to the client (ffmpeg runned using System.cmd/3 could be helpful, [ffmpeg installation](https://phoenixnap.com/kb/ffmpeg-mac))
 1. Add different types of notifications to the client. Say when the video is started to be transcoded, the client sees a banner saying your video is picked by our “transcoder”, when it is processed the client receives an update and sees the newly processed video.
 
 Depending on the time you have, you can do only the first few steps, ignoring 3 and 4.
@@ -48,7 +48,7 @@ Depending on the time you have, you can do only the first few steps, ignoring 3 
 
 - Please, commit the initial `mix new ...` run separately so we know which changes are generated, and which are yours.
 
-## Adanced version of the project - YouTube in LiveView -> LiveTube
+## Advanced version of the project - YouTube in LiveView -> LiveTube
 
 In more advanced version of the project we will be building a YouTube alternative, which primary functionalities will include:
 
