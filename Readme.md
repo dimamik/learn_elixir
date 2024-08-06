@@ -92,7 +92,7 @@ In more advanced version of the project we will be building a YouTube alternativ
 - The ability to watch your own videos in different qualities (it's okay to pre-generate and save 3 of the main ones).
 - The ability to subscribe to other folks and watch their public videos.
 - Subscribed feed, where the videos from folks you subscibe is presented.
-- General feed, where both videos from floks you subscibe are mixed with videos from the folks you don't (no recommendation algorithm for now, just )
+- General feed, where both videos from floks you subscibe are mixed with videos from the folks you don't (no recommendation algorithm for now, just random videos)
 - Real-time watch count (watch counts as soon as somebody loaded the video, only one per registered user). Unregistered users can't watch videos.
 - Video Comments & likes
 
