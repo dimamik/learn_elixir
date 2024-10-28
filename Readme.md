@@ -22,6 +22,10 @@ https://hexdocs.pm/phoenix/overview.html
 
 https://hexdocs.pm/phoenix_live_view/welcome.html
 
+### OTP
+
+https://serokell.io/blog/elixir-otp-guide
+
 ## Project details
 
 ### General description
@@ -50,7 +54,7 @@ Depending on the time you have, you can do only the first few steps, ignoring 3 
 sequenceDiagram
     participant client as Web Client
     participant server as Web Server
-    participant gen_mailbox as Gen Server MailBox
+    participant gen_mailbox as GenServer MailBox
     participant gen as GenServer a.k.a Transcoder
 
 
@@ -82,6 +86,8 @@ sequenceDiagram
 - You can create a repo with a project (public or private, whichever works best for you) and request my (@dimamik) reviews of the Pull Requests which should be atomic sensible parts your project is split into.
 
 - Please, commit the initial `mix new ...` run separately so we know which changes are generated, and which are yours.
+
+- Break down your work into medium-sized pieces, so you get your feedback faster.
 
 ## Advanced version of the project - YouTube in LiveView -> LiveTube
 
