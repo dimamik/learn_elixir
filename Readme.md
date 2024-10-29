@@ -54,8 +54,10 @@ Depending on the time you have, you can do only the first few steps, ignoring 3 
 sequenceDiagram
     participant client as Web Client
     participant server as Web Server
-    participant gen_mailbox as GenServer MailBox
-    participant gen as GenServer a.k.a Transcoder
+    box GenServer
+        participant gen_mailbox as MailBox
+        participant gen as Transcoder
+    end
 
 
     client ->>+server: Upload video under $path
