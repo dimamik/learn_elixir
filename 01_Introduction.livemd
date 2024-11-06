@@ -1,3 +1,5 @@
+<!-- livebook:{"file_entries":[{"name":"dash.png","type":"attachment"}]} -->
+
 # 01_Introduction
 
 ```elixir
@@ -13,7 +15,7 @@ Mix.install([
 
 Please be aware that this livebook is almost a full 1-1 copy of [this](https://github.com/dwyl/learn-elixir-with-livebook#elixir-initiation-livebook) amazing work done by [`@dwyl`](https://github.com/dwyl).
 
-Only parts that are outdated or need some tweaks in our internal cominuty are adjusted, so big thanks to [`@dwyl`](https://github.com/dwyl) for its amazing work.
+Only parts that are outdated or need some tweaks in our internal cominuty are adjusted, so big thanks to [`@dwyl`](https://github.com/dwyl) for this amazing work.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -29,10 +31,11 @@ Only parts that are outdated or need some tweaks in our internal cominuty are ad
 
 * Much better ["garbage collection"](http://searchstorage.techtarget.com/definition/garbage-collection) than virtually any other VM -> [Source](https://www.erlang.org/doc/apps/erts/garbagecollection.html)
 
-* Many tiny processes (as opposed to "threads"
-  which are more difficult to manage)
+* Many tiny processes (as opposed to "threads" which are more difficult to manage)
 
-* **Functional** language with [dynamic](https://www.sitepoint.com/typing-versus-dynamic-typing/) typing
+* **Functional** language with [dynamic](https://www.sitepoint.com/typing-versus-dynamic-typing/) typing.
+
+  * Also, there is an ongoing effort to bring [set-theoretic](https://hexdocs.pm/elixir/main/gradual-set-theoretic-types.html) types to Elixir
 
 * [Immutable data](https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/) so ["state"](http://softwareengineering.stackexchange.com/questions/235558/what-is-state-mutable-state-and-immutable-state) is always **predictable**! <br />
   ![image](https://cloud.githubusercontent.com/assets/194400/22413420/8a538bc2-e6af-11e6-80fd-209deb887820.png) <br />
@@ -41,8 +44,9 @@ Only parts that are outdated or need some tweaks in our internal cominuty are ad
   means apps built with **`Elixir`** are run in production for **years**
   without any "_downtime_"!
 
-* Real-time web apps are "_easy_"
-  (_or at least easier than many other languages!_) as **WebSockets & streaming** are baked-in
+* Real-time web apps are "_easy_" (_or at least easier than many other languages!_) as **WebSockets & streaming** are baked-in
+
+  * Also, client-server interaction is made **way** easier with [LiveView](https://github.com/phoenixframework/phoenix_live_view)
 
 Things *will* go wrong with code, and **`Elixir`** provides supervisors which describe how to restart parts of your system when things don't go as planned.
 
@@ -73,18 +77,17 @@ Right now you're inside a livebook. Most likely you're running a pre-build versi
 
 If you'd want to use Elixir in your terminal independently of livebook, you should install it locally.
 
-To do so you can go to
-http://elixir-lang.org/install.html or follow our guide here:
+To do so you can go to http://elixir-lang.org/install.html **and follow _asdf_ part** or follow our guide here:
 
 ### Installation:
 
 #### Mac:
 
-It is not advised to use `homebrew`, so instead we'd use `asdf` to install elixir:
+It is not advised to use `homebrew`, so instead we'd use `asdf` to install the newest version of elixir:
 
 [Follow this guide to do that](https://thinkingelixir.com/install-elixir-using-asdf/).
 
-Shortly, asdf will allow us to control which versions of Erlang and elixir we're using in which project, and `.toolversions` file would allow us to control that per project basis, whileas brew supports only one version (for all projects, users, etc.).
+Shortly, `asdf` will allow us to control which versions of Erlang and elixir we're using in which project, and `.toolversions` file would allow us to control that per-project basis, whiles brew supports only one version (for all projects, users, etc.).
 
 Also, make sure to install the latest Erlang/OTP and Elixir versions.
 
@@ -141,6 +144,10 @@ You have several ways to run an Elixir script. You can firstly use the REPL (Rea
 ### Dash app
 
 Dash app is a cool app that allows you to search through the docs, it has 30 days trial, so give it a try and see if it works for you.
+
+I personally have it binded to `option + space` and I search docs just as I search spotlight.
+
+![Dash example](https://raw.githubusercontent.com/dimamik/learn_elixir/main/img/dash.png)
 
 https://kapeli.com/dash
 
