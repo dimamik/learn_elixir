@@ -68,13 +68,13 @@ sequenceDiagram
 
     server ->>-client: Transcoding is scheduled
 
-    gen_mailbox ->>+gen: Transcode $path into X 
+    gen_mailbox ->>+gen: Transcode $path into X
     gen ->>-client: Transcoding of X finished under $path_X (via clients websocket)
 
-    gen_mailbox ->>+gen: Transcode $path into Y 
+    gen_mailbox ->>+gen: Transcode $path into Y
     gen ->>-client: Transcoding of Y finished under $path_Y (via clients websocket)
 
-    gen_mailbox ->>+gen: Transcode $path into Z 
+    gen_mailbox ->>+gen: Transcode $path into Z
     gen ->>-client: Transcoding of Z finished under $path_Z (via clients websocket)
 
     %% Note over web,db: The user must be logged in to submit blog posts
@@ -91,6 +91,16 @@ sequenceDiagram
 
 - Break down your work into medium-sized pieces, so you get your feedback faster.
 
+### GitHub "Pro Tips" or how I like to work with GitHub
+
+- Name commits `Add transcoder` or `Fix transcoder`, with capital letter in active voice. Make sure it's short but descriptive.
+- Squash commits when merging PR to main branch. Name PR the same way you name commits.
+- When your PR is ready for review, request it (@dimamik)
+- When you got some feedback, resolve yourself the comments that are addressed, and leave unresolved the comments where the discussion is still ongoing.
+- When the PR is ready for re-review - re-request the review again (@dimamik)
+- Feel free to merge the PR yourself when it is approved whenever you want, and if there were some small changes to apply - no need to re-request the review if the PR was already approved.
+- Make sure your PR description has a summary of the changes and (if applicable) a screenshot of the UI changes.
+
 ## Advanced version of the project - YouTube in LiveView -> LiveTube
 
 In more advanced version of the project we will be building a YouTube alternative, which primary functionalities will include:
@@ -99,8 +109,8 @@ In more advanced version of the project we will be building a YouTube alternativ
 - User private video library. Some of the videos can be marked as public, then they can be watched by others.
 - The ability to watch your own videos in different qualities (it's okay to pre-generate and save 3 of the main ones).
 - The ability to subscribe to other folks and watch their public videos.
-- Subscribed feed, where the videos from folks you subscibe is presented.
-- General feed, where both videos from floks you subscibe are mixed with videos from the folks you don't (no recommendation algorithm for now, just random videos)
+- Subscribed feed, where the videos from folks you subscribe is presented.
+- General feed, where both videos from folks you subscribe are mixed with videos from the folks you don't (no recommendation algorithm for now, just random videos)
 - Real-time watch count (watch counts as soon as somebody loaded the video, only one per registered user). Unregistered users can't watch videos.
 - Video Comments & likes
 
