@@ -91,25 +91,30 @@ Shortly, `asdf` will allow us to control which versions of Erlang and elixir we'
 
 Also, make sure to install the latest Erlang/OTP and Elixir versions.
 
+> Note: the guide is still useful, but `asdf`'s API changed in v0.16. Some commands are now split into words, e.g. `asdf list-all` became `asdf list all`. If `iex` or `erl` are not available afterwards, register the selected versions with `asdf set` (see `asdf set -h`).
+
 #### Ubuntu:
 
-* **Add the Erlang Solutions repo**:
+* **Add the RabiitMQ Packages repo (`apt` tends to lag several versions behind)**:
 
 ```
-wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+sudo add-apt-repository ppa:rabbitmq/rabbitmq-erlang
 ```
 
 * **Run**: `sudo apt-get update`
 * **Install the Erlang/OTP platform and all of its applications**:
-  `sudo apt-get install esl-erlang`
-* **Install Elixir**: `sudo apt-get install elixir`
+  `sudo apt install erlang`
+* **Install Elixir**: `sudo apt install elixir`
 
 #### Windows:
 
-* **Web installer**
+* **Installers**
 
-  * [Download the installer](https://repo.hex.pm/elixir-websetup.exe)
-  * Click next, next, ..., finish
+  * [Download and run the Erlang installer](https://repo.hex.pm/elixir-websetup.exe)
+  * Download and run the Elixir installer compatible with your Erlang/OTP version:
+    * [Elixir 1.20.2 on Erlang 29](https://github.com/elixir-lang/elixir/releases/download/v1.20.2/elixir-otp-29.exe)
+    * [Elixir 1.20.2 on Erlang 28](https://github.com/elixir-lang/elixir/releases/download/v1.20.2/elixir-otp-28.exe)
+    * [Elixir 1.20.2 on Erlang 27](https://github.com/elixir-lang/elixir/releases/download/v1.20.2/elixir-otp-27.exe)
 
 * **Chocolatey** (_Package Manager_)
 
@@ -1170,8 +1175,6 @@ files like should have names like:
 
 We are running this code in a `Livebook`. It is slightly different.
 
-https://www.elixirnewbie.com/blog/writing-tests-in-livebook
-
 Since we are running the code in a `Livebook`, run the following:
 
 ```elixir
@@ -1208,8 +1211,6 @@ ExUnit.run()
 If you want to learn about code coverage then check out the following tutorial:
 
 https://github.com/dwyl/learn-elixir/tree/master/codecov_example.
-
-A [blog post](https://www.elixirnewbie.com/blog/writing-tests-in-livebook) that explains how to run tests in Livebook.
 
 ## Formatting
 
@@ -1270,9 +1271,6 @@ You may also use [`credo`](https://github.com/rrrene/credo), a static code analy
 
 We recommend installing a plugin in your Text Editor to auto-format:
 
-* **Atom** Text Editor Auto-formatter:
-  https://atom.io/packages/atom-elixir-formatter
-
 * Vim **`Elixir`** Formatter: https://github.com/mhinz/vim-mix-format
 
 * VSCode:
@@ -1282,8 +1280,6 @@ We recommend installing a plugin in your Text Editor to auto-format:
   https://github.com/elixir-lang/elixir/blob/master/lib/mix/lib/mix/tasks/format.ex
 
 * https://hashrocket.com/blog/posts/format-your-elixir-code-now
-
-* https://devonestes.herokuapp.com/everything-you-need-to-know-about-elixirs-new-formatter
 
 ## Publishing to Hex
 
@@ -1599,7 +1595,7 @@ IO.inspect(self(), label: "main process: ")
 Math3.double(10)
 ```
 
-<!-- Learn more at https://mermaid-js.github.io/mermaid -->
+<!-- Learn more at https://mermaid.ai/open-source/intro/ -->
 
 ```mermaid
 
@@ -2377,7 +2373,7 @@ VegaLite.new(
 > to _investigate_ other options for programming languages was the fact
 > that JavaScript (_with the introduction of ES2015_) now has
 > ***Six Ways to Declare a Function***:
-> https://rainsoft.io/6-ways-to-declare-javascript-functions/
+> https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
 > which means that there is _ambiguity_ and "_debate_" as to which is
 > "_best practice_", Go, **`Elixir`** and Rust don't suffer from this problem.
 > Sure there are "_anonymous_" functions in Elixir
